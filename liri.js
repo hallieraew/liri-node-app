@@ -28,18 +28,16 @@ switch (commandInput) {
         break;
 }
 
-// need to sort out json values
 function getConcert() {
     var artist = searchInput;
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(
         function (response) {
-            console.log("\nVenue: " + response.data[1].venue.name);
-            // console.log("\n-------------\n");
+            console.log("\n-------------\n");
+            console.log("Venue: " + response.data[1].venue.name);
             console.log("Venue Location: " + response.data[1].venue.city);
-            // console.log("\n-------------\n");
             var date = moment(response.data[0].datetime).format('MM/DD/YYYY');
             console.log("Date of Event: " + date);
-            // console.log("\n-------------\n");
+            console.log("\n-------------\n");
         }
     )
         .catch(function (err) {
