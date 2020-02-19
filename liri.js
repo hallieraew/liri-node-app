@@ -72,7 +72,7 @@ function getSong() {
 function getMovie() {
     var movieTitle = searchInput;
 
-    if (movieTitle === "") {
+    if (movieTitle == "") {
         movieTitle = "Mr. Nobody"
     }
 
