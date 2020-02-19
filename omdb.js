@@ -11,7 +11,7 @@ axios.get("http://www.omdbapi.com/?t=" + moveTitle +"&y=&plot=short&apikey=trilo
     console.log("\n-------------\n");
     console.log("The movie's IMDB rating is: " + response.data.imdbRating);
     console.log("\n-------------\n");
-    console.log("The movie's Rotten Tomatoes rating is: " + response.data.Ratings[1]);
+    console.log("The movie's Rotten Tomatoes rating is: " + response.data.Ratings[1].Value);
     console.log("\n-------------\n");
     console.log("Produced in: " + response.data.Country);
     console.log("\n-------------\n");
