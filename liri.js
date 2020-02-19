@@ -1,6 +1,6 @@
 require("dotenv").config();
 var fs = require("fs");
-var keys = require("./keys.js");
+var keys = require("./keys");
 var axios = require("axios");
 var moment = require("moment");
 var Spotify = require('node-spotify-api');
@@ -10,7 +10,7 @@ var commandInput = process.argv[2];
 var searchInput = process.argv[3];
 var artist = searchInput;
 var songName = searchInput;
-var moveTitle = searchInput;
+var movieTitle = searchInput;
 
 switch (commandInput) {
     case "concert-this":
@@ -55,9 +55,12 @@ function getSong() {
     }
 
     spotify
-        .search({ type: 'track', query: songName })
+        .search({ type: 'track', query: songName, limit: 1 })
         .then(function (response) {
-            console.log(response.track);
+            console.log("\nTrack: " + songName);
+            console.log("\nArtist: " + response.tracks.items[0].album.artists[0].name);
+            console.log("\nSong Preview: " + response.tracks.items[0].preview_url);
+            console.log("\nAlbum: " + response.tracks.items[0].album.name + "\n")
         })
         .catch(function (err) {
             console.log(err);
@@ -65,10 +68,9 @@ function getSong() {
 };
 
 function getMovie() {
-    axios.get("http://www.omdbapi.com/?t=" + moveTitle + "&y=&plot=short&apikey=trilogy").then(
+    axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
-            // Then we print out the imdbRating
-            console.log("\nMovie Title: " + response.data.Title);
+            console.log("\n*Movie Title: " + response.data.Title);
             console.log("\n-------------\n");
             console.log("Release Year: " + response.data.Year);
             console.log("\n-------------\n");
