@@ -44,7 +44,7 @@ LIRI will be a command line node app that takes in parameters and gives you back
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-    Ex: 
+    Ex: ![Screenshot of function to retrieve concert information and the output in the terminal.](images/Screen Shot 2020-02-19 at 2.11.49 PM.png)
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
