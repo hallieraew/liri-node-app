@@ -49,13 +49,15 @@ function getConcert() {
 
 function getSong() {
     var songName = searchInput;
+    var limit = 10;
 
     if (songName == "") {
         songName = "The Sign"
+        limit = 1;
     }
 
     spotify
-        .search({ type: 'track', query: songName, limit: 1 })
+        .search({ type: 'track', query: songName, limit: limit })
         .then(function (response) {
                 console.log("\nTrack: " + songName);
                 console.log("\nArtist: " + response.tracks.items[0].album.artists[0].name);
