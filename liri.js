@@ -57,10 +57,12 @@ function getSong() {
     spotify
         .search({ type: 'track', query: songName, limit: limit })
         .then(function (response) {
-                console.log("\nTrack: " + songName);
-                console.log("\nArtist: " + response.tracks.items[0].album.artists[0].name);
-                console.log("\nSong Preview: " + response.tracks.items[0].preview_url);
-                console.log("\nAlbum: " + response.tracks.items[0].album.name + "\n")
+            console.log("\n-------------\n");
+            console.log("Track: " + songName);
+            console.log("\nArtist: " + response.tracks.items[0].album.artists[0].name);
+            console.log("\nSong Preview: " + response.tracks.items[0].preview_url);
+            console.log("\nAlbum: " + response.tracks.items[0].album.name)
+            console.log("\n-------------\n");
         })
         .catch(function (err) {
             console.log(err);
@@ -76,18 +78,13 @@ function getMovie() {
 
     axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
+            console.log("\n-------------\n");
             console.log("Movie Title: " + response.data.Title);
-            // console.log("\n-------------\n");
             console.log("\nRelease Year: " + response.data.Year);
-            // console.log("\n-------------\n");
             console.log("\nThe movie's IMDB rating is: " + response.data.imdbRating);
-            // console.log("\n-------------\n");
             console.log("\nThe movie's Rotten Tomatoes rating is: " + response.data.Ratings[1].Value);
-            // console.log("\n-------------\n");
             console.log("\nProduced in: " + response.data.Country);
-            // console.log("\n-------------\n");
             console.log("\nLanguage: " + response.data.Language);
-            // console.log("\n-------------\n");
             console.log("\nPlot: " + response.data.Plot);
             console.log("\nActors: " + response.data.Actors)
             console.log("\n----------------------------\n");

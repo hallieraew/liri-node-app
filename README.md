@@ -58,7 +58,9 @@ LIRI will be a command line node app that takes in parameters and gives you back
 
      * The album that the song is from
 
-    Ex:
+    Ex:![Screenshot of function to retrieve song information from spotify and the output in the terminal.](/images/spotify.png)
+
+    Ex:![Screenshot of function to retrieve song information from spotify and the output in the terminal when user input is blank.](/images/spotifyNoSong.png)
 
 3. `node liri.js movie-this '<movie name here>'`
 
@@ -77,7 +79,8 @@ LIRI will be a command line node app that takes in parameters and gives you back
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
-    Ex:
+    Ex: ![Screenshot of function to retrieve movie information and the output in the terminal.](/images/movieThis.png)
+    Ex: ![If no input exists, output information for the movie, Mr. Nobody.](/images/mrNobody.png)
 
 4. `node liri.js do-what-it-says`
 
@@ -87,5 +90,7 @@ LIRI will be a command line node app that takes in parameters and gives you back
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-    Ex:
+    Ex: ![Screenshot of function to retrieve command and search input from read.txt file.](/images/function.png)
+    
+    Ex: ![Screenshot of console output after reading read.txt file and executing.](/images/consoleDo.png)
 
