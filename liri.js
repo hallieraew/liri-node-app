@@ -82,7 +82,7 @@ function getMovie() {
             console.log("Movie Title: " + response.data.Title);
             console.log("\nRelease Year: " + response.data.Year);
             console.log("\nThe movie's IMDB rating is: " + response.data.imdbRating);
-            console.log("\nThe movie's Rotten Tomatoes rating is: " + response.data.Ratings[response.data.Ratings.findIndex(index=>index.Source === "Rotten Tomatoes")].Value);
+            console.log("\nThe movie's Rotten Tomatoes rating is: " + response.data.Ratings[1].Value);
             console.log("\nProduced in: " + response.data.Country);
             console.log("\nLanguage: " + response.data.Language);
             console.log("\nPlot: " + response.data.Plot);
