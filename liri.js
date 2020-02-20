@@ -7,7 +7,7 @@ var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 
 var commandInput = process.argv[2];
-var searchInput = process.argv[3];
+var searchInput = process.argv.slice(3).join(" ");
 
 
 switch (commandInput) {
